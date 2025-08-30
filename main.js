@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  const Protocols = ['EIGRP','RIP','OSPF','Static', 'IS-IS','VLAN','DHCP','Port Security'];
+  const Protocols = ['EIGRP','RIP','OSPF','Static','VLAN','DHCP','WebFrontEnd'];
   const Interest = ['Networking', 'Linux', 'Tenology','Security','Read books', 'Research']
   const projectsCart = [
     {image:'Projects/DHCP,VLAN.png', title:'DHCP and VLAN Configuration',Link:'Projects/DHCP,VLAN.pkt'},
@@ -16,10 +16,14 @@ $(document).ready(function(){
     'https://www.youtube.com/embed/Rxww4wOkyiI?si=4M0oB5jccntK8VES',
     'https://www.youtube.com/embed/Brp62NejQIw?si=8giUQFWv8wqLFexJ'
   ]
+  const Photos = [
+    'img-4.png','img-2.png','img-3.png','img-1.png','img-5.png',
+  ]
   let getProtocols = ``;  
   let getInterest =``;
   let getprojectsCart = ``;
   let getVideoCart = ``;
+  let getPhotos = ``;
   Protocols.forEach(val => {
     getProtocols += `
       <h1 class="bg-gray-200 rounded-md py-1 px-2 cursor-pointer text-center">${val}</h1>
@@ -56,10 +60,18 @@ $(document).ready(function(){
       </div>
     `
   })
+  Photos.forEach((val) => {
+    getPhotos +=`
+      <div class=" rounded-md lg:h-[260px] flex justify-center">
+        <img class="rounded-md lg:h-full" src="Photos/${val}" alt="">
+      </div>
+    `
+  })
   $("#Protocol").html(getProtocols);  
   $("#Interest").html(getInterest)
   $("#projectsCart").html(getprojectsCart)
   $("#VideoCart").html(getVideoCart)
+  $("#photo").html(getPhotos)
   
 
 });
